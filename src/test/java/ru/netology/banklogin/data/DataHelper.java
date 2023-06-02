@@ -14,9 +14,10 @@ public class DataHelper {
     private DataHelper(){
 
     }
-    public static AuthInfo getAuthInfoWithTestData(){
-        return new AuthInfo("vasya", "qwerty123");
+    public static AuthInfo getAuthInfoWithTestData() {
+        return new AuthInfo ("vasya", "qwerty123");
     }
+
     private static String generateRandomLogin(){
         return faker.name().username();
     }

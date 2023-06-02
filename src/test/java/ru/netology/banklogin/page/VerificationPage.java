@@ -5,10 +5,10 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Selenide.page;
-import static jdk.internal.org.objectweb.asm.util.CheckClassAdapter.verify;
+
 
 public class VerificationPage {
-    @FindBy(css = "[data-test-id=code]input")
+    @FindBy(css = "[data-test-id=code] input")
     private SelenideElement codeField;
     @FindBy(css = "[data-test-id=action-verify]")
     private SelenideElement verifyButton;

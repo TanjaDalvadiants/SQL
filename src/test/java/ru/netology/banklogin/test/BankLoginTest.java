@@ -18,8 +18,8 @@ public class BankLoginTest {
 
     @Test
     @DisplayName("Should successfully login to Dashboard with exist login and password from sut test data")
-    void shouldSuccessfullLogin() {
-        var loginPage = open("http://localhost/9999", LoginPage.class);
+    void shouldSuccessfulLogin() {
+        var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = DataHelper.getAuthInfoWithTestData();
         var verificationPage = loginPage.validLogin(authInfo);
         verificationPage.verifyVerificationPageVisibility();
@@ -30,7 +30,7 @@ public class BankLoginTest {
     @Test
     @DisplayName("Should get error notification if user is not exist in base")
     void shouldGetErrorNotificationIfLoginWithRandomWithoutAddingToBase() {
-        var loginPage = open("http://localhost/9999", LoginPage.class);
+        var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = DataHelper.generateRandomUser();
         loginPage.validLogin(authInfo);
         loginPage.verifyErrorNotificationVisibility();
@@ -39,7 +39,7 @@ public class BankLoginTest {
     @Test
     @DisplayName("Should get error notification if login with exist in base and active user and random verification code")
     void shouldGetErrorNotificationIfLoginWithExistUserAndRandomVerificationCode() {
-        var loginPage = open("http://localhost/9999", LoginPage.class);
+        var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = DataHelper.getAuthInfoWithTestData();
         var verificationPage = loginPage.validLogin(authInfo);
         verificationPage.verifyVerificationPageVisibility();
